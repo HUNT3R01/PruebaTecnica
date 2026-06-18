@@ -17,11 +17,15 @@ export const AuthProvider = ({ children }) => {
     }, [user]);
 
     const login = (userData) => {
-        setUser(userData); // Guardará: { id, username, rol }
+        setUser(userData);
     };
 
     const logout = () => {
         setUser(null);
+        const eventoLogout = new CustomEvent('usuarioLogout', { 
+            detail: { mensaje: 'Sesión finalizada por el usuario' } 
+        });
+        window.dispatchEvent(eventoLogout);
     };
 
     return (

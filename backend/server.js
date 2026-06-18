@@ -14,7 +14,7 @@ app.use(express.json()); // Permite a Express entender el cuerpo de los JSON (re
 const pool = new Pool({
     user: process.env.DB_USER || 'postgres',
     host: process.env.DB_HOST || 'localhost',
-    database: process.env.DB_NAME || '"prueba_tecnica"',
+    database: process.env.DB_NAME || 'prueba_tecnica',
     password: process.env.DB_PASSWORD || '1234', 
     port: process.env.DB_PORT || 5432,
 });
